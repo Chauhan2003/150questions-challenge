@@ -1,0 +1,24 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        // make variable name c -> check from nums1 array.
+        int c = m-1;
+        // make variable name p -> place from nums1 array.
+        int p = m+n-1;
+        // make variable name e -> element from nums2 array.
+        int e = n-1;
+
+        while(e>=0){
+            if(c>=0 && nums1[c]>nums2[e]){
+                nums1[p] = nums1[c];
+                p--;
+                c--;
+            }
+            else{
+                nums1[p] = nums2[e];
+                p--;
+                e--;
+            }
+        }
+    }
+}
