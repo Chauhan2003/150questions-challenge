@@ -1,0 +1,28 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static void swap(char[] charArray, int start, int end) {
+        while (start < end) {
+            char temp = charArray[start];
+            charArray[start] = charArray[end];
+            charArray[end] = temp;
+
+            start++;
+            end--;
+        }
+    }
+    
+    static String reverseString(String s, int m, ArrayList<Integer> a) {
+        // Write your code here
+        char[] charArray = s.toCharArray();
+        
+        for (int i = 0; i < m; i++) {
+            int start = a.get(i);
+            int end = charArray.length - a.get(i) - 1;
+
+            swap(charArray, start, end);
+        }
+        
+        return new String(charArray);
+    }
+}
