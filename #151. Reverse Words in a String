@@ -1,0 +1,23 @@
+class Solution {
+    public static void swap(String[] str){
+        int left = 0;
+        int right = str.length - 1;
+        while(left<right){
+            String temp = str[left];
+            str[left] = str[right];
+            str[right] = temp;
+            left++;
+            right--;
+        }
+    }
+    public String reverseWords(String s) {
+        s = s.trim();
+        // split the string in to array when we see space:
+        // `+` - Represents 1 or more
+        // `*` - Represents 0 or more
+        String[] str = s.split("\\s+");
+        swap(str);
+        String ans = String.join(" ", str);
+        return ans;
+    }
+}
