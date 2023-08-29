@@ -1,0 +1,41 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        LinkedList<Integer> ll = new LinkedList<>();
+        
+        ll.add(1);
+        ll.add(2);
+        ll.addLast(3);
+        ll.addFirst(4);
+        // Add element at particular index
+        ll.add(2, 11);
+        System.out.println(ll);
+        
+        // Remove element from linked list
+        ll.remove(3); // Remove index from liked list
+        System.out.println(ll);
+        
+        ll.removeLast();
+        ll.removeFirst();
+        System.out.println(ll);
+        
+        // Changing Elements
+        ll.set(1,9);
+        System.out.println(ll);
+        
+        // Access element
+        System.out.println(ll.get(1));
+        
+        // Linked lists to arrray
+        System.out.println("");
+        Object[] arr = ll.toArray();
+        for(Object ob : arr){
+            System.out.print(ob + " ");
+        }
+        
+        //Linked lists size
+        System.out.println(ll.size());
+        
+    }
+}
