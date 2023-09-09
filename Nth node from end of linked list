@@ -1,0 +1,51 @@
+class Solution
+{
+    //Function to find the data of nth node from the end of a linked list.
+    public Node Reverse(Node head){
+        Node curr = head;
+        Node front = null;
+        Node prev = null;
+        
+        while(curr != null){
+            front = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = front;
+        }
+        
+        return prev;
+    }
+    
+    public int Size(Node head){
+        Node curr = head;
+        int size = 0;
+        
+        while(curr != null){
+            size++;
+            curr = curr.next;
+        }
+        
+        return size;
+    }
+    
+    int getNthFromLast(Node head, int n)
+    {
+    	// Your code here
+    	head = Reverse(head);
+    	int count = 1;
+    	Node curr = head;
+    	
+    	int size = Size(head);
+    	
+    	if(curr == null || n>size){
+    	    return -1;
+    	}
+    	
+    	while(count < n && curr != null && n <= size){
+    	    curr = curr.next;
+    	    count++;
+    	}
+    	
+    	return curr.data;
+    }
+}
