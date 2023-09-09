@@ -1,0 +1,24 @@
+class Solution
+{
+    //Function to check whether the list is palindrome.
+    boolean isPalindrome(Node head) 
+    {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Node curr=head;
+        
+        while(curr!=null){
+            int ele=curr.data;
+            list.add(ele);
+            curr=curr.next;
+        }
+        
+        ArrayList<Integer> rev = new ArrayList<Integer>(list);
+        
+        Collections.reverse(rev);
+        
+        if(list.equals(rev)){
+            return true;
+        }
+        return false;
+    }    
+}
